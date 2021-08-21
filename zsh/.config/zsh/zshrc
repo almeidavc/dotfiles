@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# Useful options (man zshoptions)
+zle_highlight=('paste:none')
+
+# Disable beeping sound
+unsetopt BEEP
+
+# Exports
+export EDITOR=vim
+export VISUAL="$EDITOR"
+
+# Prompt
+PROMPT='%B%F{blue}[%f%n%F{blue}]%f ➜ %F{blue}%1~%f%b '
+
+# Useful functions
+source "$ZDOTDIR/zsh-functions"
+
+# Plugins
+zsh_add_plugin "zsh-users/zsh-autosuggestions"
+zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+
+# OS specific aliases
+case "$(uname -s)" in
+Darwin)
+	# echo 'Mac OS X'
+	alias ls='ls -G'
+	;;
+esac
+
