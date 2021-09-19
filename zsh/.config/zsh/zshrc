@@ -6,15 +6,11 @@ zle_highlight=('paste:none')
 # Disable beeping sound
 unsetopt BEEP
 
-# Exports
-export EDITOR=vim
-export VISUAL="$EDITOR"
-
-# Prompt
-PROMPT='%B%F{blue}[%f%n%F{blue}]%f ➜ %F{blue}%1~%f%b '
-
-# Useful functions
+# Source the other config files
 source "$ZDOTDIR/zsh-functions"
+zsh_add_file "zsh-aliases"
+zsh_add_file "zsh-bindings"
+zsh_add_file "zsh-prompt"
 
 # Plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
@@ -22,12 +18,3 @@ zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 
 # Change keybind to accept zsh autosuggestion
 bindkey '^o' autosuggest-accept
-
-# OS specific aliases
-case "$(uname -s)" in
-Darwin)
-	# echo 'Mac OS X'
-	alias ls='ls -G'
-	;;
-esac
-

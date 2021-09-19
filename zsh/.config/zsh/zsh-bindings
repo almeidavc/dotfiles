@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Vim mode
+bindkey -v
+bindkey 'jk' vi-cmd-mode
+
+# Search history
+bindkey '^P' up-history
+bindkey '^N' down-history
