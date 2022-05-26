@@ -6,4 +6,8 @@ Darwin)
 	# echo 'Mac OS X'
 	alias ls='ls -G'
 	;;
+
+Linux)
+  alias ls='ls --color=auto'
+  ;;
 esac
